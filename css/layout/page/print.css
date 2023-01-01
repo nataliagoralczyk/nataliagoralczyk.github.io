@@ -1,0 +1,178 @@
+@media only print {
+  /* Set margins */
+  @page {
+    size: A4;
+    margin: 3.5rem 5rem;
+  }
+
+  /* Hide web-specific elements */
+  .theme-switch-wrapper,
+  .top-button-wrapper,
+  .gutter,
+  .web,
+  .heading-link {
+    display: none !important;
+  }
+
+  /* Show print-specific elements */
+  .print {
+    display: block;
+  }
+  .home-heading {
+    border-bottom: none;
+  }
+
+  /* Reset body props inherited from base style */
+  body {
+    margin: unset;
+    min-width: unset;
+    display: unset;
+    flex-direction: unset;
+    height: unset;
+    min-height: unset;
+  }
+
+  /* Separate the header and footer from content */
+  header {
+    border-bottom: solid var(--border-width-medium) var(--content-text-dark);
+    margin-bottom: calc(var(--margin) * 1.25);
+    position: static;
+  }
+
+  main {
+    margin-top: calc(var(--margin) * 1.25);
+  }
+
+  header .header-items-wrapper,
+  footer {
+    padding: 0;
+  }
+  footer {
+    border-top: solid var(--border-width-medium) var(--content-text-dark);
+    margin-top: calc(var(--margin) * 1.25);
+  }
+
+  article,
+  div,
+  code {
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  /* Avoid breaking certain elements */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  img,
+  figure,
+  p,
+  li,
+  .post,
+  .subpage,
+  .codeblock,
+  .gallery-item,
+  footer {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    page-break-after: auto;
+    page-break-before: auto;
+  }
+
+  #layout-section .subpage,
+  #layout-gallery .subpage,
+  #layout-single-gallery .gallery-item,
+  #layout-blog .post {
+    border: var(--content-background-middle) var(--border-width-medium) solid;
+    background-color: transparent;
+  }
+
+  #layout-single-gallery .icon,
+  #layout-galler .icon {
+    border: none;
+  }
+
+  #layout-gallery .gallery-items,
+  #layout-single-gallery .gallery-items-container {
+    display: block;
+    margin-top: calc(var(--margin) * 3);
+  }
+  #layout-gallery .gallery-item,
+  #layout-single-gallery .gallery-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75%;
+    margin: var(--margin) auto;
+    border: var(--content-background-middle) var(--border-width-medium) solid;
+    page-break-after: auto;
+    page-break-before: auto;
+    page-break-inside: avoid;
+  }
+
+  #layout-gallery .gallery-item *,
+  #layout-gallery .gallery-item .description {
+    color: var(--content-text-light);
+  }
+
+  /* Fix colors in code */
+
+  .content .codeblock {
+    border: var(--content-background-middle) var(--border-width-medium) solid;
+    background-color: transparent !important;
+  }
+
+  .content pre > code,
+  .highlight pre,
+  .content .code-lg-container {
+    color: var(--content-text-dark) !important;
+    background-color: transparent !important;
+  }
+
+  .content .code-lg-container {
+    justify-content: flex-end;
+  }
+
+  .content code,
+  .content code * {
+    color: var(--content-text-dark) !important;
+  }
+
+  .content code {
+    background-color: var(--content-background-middle);
+  }
+
+  #layout-single-gallery .modal-body,
+  #layout-single-gallery .modal {
+    background-color: #ffffff;
+  }
+
+  #layout-single-gallery .modal-body {
+    border: var(--content-background-middle) var(--border-width-medium) solid;
+  }
+
+  #layout-single-gallery .modal-figure .meta *,
+  #layout-single-gallery .modal-figure .counter-control *,
+  #layout-single-gallery .modal-figure .operations * {
+    text-shadow: unset;
+  }
+
+  #layout-single-gallery .modal-figure .meta {
+    position: fixed;
+    bottom: 6vh;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: unset;
+  }
+
+  /* Prevent printing multiple pages with the same modal */
+  body.modal-on .content {
+    display: none;
+  }
+}
