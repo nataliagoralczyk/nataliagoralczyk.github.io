@@ -1,0 +1,73 @@
+baseURL: "https://nataliagoralczyk.github.io/"
+languageCode: "en-us"
+defaultContentLanguage: "en-us"
+theme: "r-hugo-theme"
+
+Params:
+  title: "NG"
+  description: "My personal site."
+  author: "Natalia Góralczyk"
+  #favicon_href: "img/favicon.svg"
+  # Footer
+  email: "mailto:mail@domain.com"
+  github: "https://github.com/nataliagoralczyk/"
+  #linkedin: "https://linkedin.com/in/linkedin_id"
+  #twitter: "https://twitter.com/twitter_id"
+  gallery_root: "media/gallery"
+
+# Navigation
+# End each URL with "/" to make active pages work
+Menus:
+  main:
+    - Name: "Home"
+      URL: "/"
+      weight: 1
+    - Name: "Resume"
+      URL: "/resume/"
+      weight: 2
+#    - Name: "Gallery"
+#      URL: "/gallery/"
+#      weight: 3
+#    - Name: "Blog"
+#      URL: "/blog/"
+#      weight: 4
+
+# Enable related links/see alsos
+related:
+  indices:
+    - name: keywords
+      weight: 100
+  threshold: 80
+  toLower: false
+
+# Markdown rendering settings
+markup:
+  defaultMarkdownHandler: goldmark
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      linkifyProtocol: https
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: true
+    parser:
+      attribute:
+        block: true
+        title: true
+      autoHeadingID: true
+      autoHeadingIDType: github
+    renderer:
+      hardWraps: false
+      unsafe: true
+      xhtml: false
+  highlight:
+    codeFences: true
+    noClasses: true
+    style: monokai
+  tableOfContents:
+    endLevel: 3
+    ordered: false
+    startLevel: 2
